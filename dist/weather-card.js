@@ -51,11 +51,11 @@ const windDirections = [
 
 window.customCards = window.customCards || [];
 window.customCards.push({
-  type: "weather-card",
+  type: "bbs-weather-card",
   name: "Weather Card",
   description: "A custom weather card with animated icons.",
   preview: true,
-  documentationURL: "https://github.com/bramkragten/weather-card",
+  documentationURL: "https://github.com/blitzmaker/bbs-weather-card",
 });
 
 const fireEvent = (node, type, detail, options) => {
@@ -98,7 +98,7 @@ class WeatherCard extends LitElement {
 
   static async getConfigElement() {
     await import("./weather-card-editor.js");
-    return document.createElement("weather-card-editor");
+    return document.createElement("bbs-weather-card-editor");
   }
 
   static getStubConfig(hass, unusedEntities, allEntities) {
@@ -322,7 +322,7 @@ class WeatherCard extends LitElement {
     return `${
       this._config.icons
         ? this._config.icons
-        : "https://cdn.jsdelivr.net/gh/bramkragten/weather-card/dist/icons/"
+        : "https://cdn.jsdelivr.net/gh/blitzmaker/bbs-weather-card/dist/icons/"
     }${
       sun && sun.state == "below_horizon"
         ? weatherIconsNight[condition]
@@ -532,4 +532,4 @@ class WeatherCard extends LitElement {
     `;
   }
 }
-customElements.define("weather-card", WeatherCard);
+customElements.define("bbs-weather-card", WeatherCard);
