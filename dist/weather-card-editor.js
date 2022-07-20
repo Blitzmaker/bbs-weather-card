@@ -213,4 +213,4 @@ export class WeatherCardEditor extends LitElement {
   }
 }
 
-customElements.define("weather-card-editor", WeatherCardEditor);
+customElements.define("bbs-weather-card-editor", WeatherCardEditor);
